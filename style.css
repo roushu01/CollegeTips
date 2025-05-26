@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar p {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.navbar-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.filter-btn {
+  background-color: #607c67;
+  color: #fffafc;
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 40px;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.gallery,.team-work{
+    margin-top:2px;
+    height:600px;
+    display:flex;
+    background-color: #28a745;
+  }
+  .img{
+    margin-left: 40px;
+    margin-top:50px;
+    border:5px solid white;
+    animation:pulse 2s infinite ease-in-out;
+    display:inline-block;
+    cursor:pointer;
+    height:300px;
+    width:300px;
+    rotate: 10deg;
+  }
+  .img1{
+    margin-left: 40px;
+    margin-top:50px;
+    border:5px solid white;
+    animation:pulse 2s infinite ease-in-out;
+    display:inline-block;
+    cursor:pointer;
+    height:300px;
+    width:300px;
+   margin-top:200px;
+   rotate: 330deg;
+  }
+  .img2{
+    margin-left: 40px;
+    /* margin-top:50px; */
+    border:5px solid white;
+    animation:pulse 2s infinite ease-in-out;
+    display:inline-block;
+    cursor:pointer;
+    height:300px;width:300px;margin-top:20px;rotate: -5deg;margin-left: -10px;
+  }
+  .Creative-Campaigns,.g-img {
+    margin-top:2px;
+    margin: 1px;
+    overflow-y: hidden;
+    height:900px;
+    display:flex;
+  }
+  .Campaigns-img:hover{
+    animation:pulse 2s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  .team-slogan  {
+    margin-left: 10px;
+    font-size: 4.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+.Campaigns-slogan  {
+    margin-left: 10px;
+    font-size: 4.2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2F4F4F;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.Campaigns-slogan span {
+  font-size: 4rem;
+ color: #2F4F4F;
+  font-weight: 700;
+ 
+}
+
+.team-slogan span {
+  font-size: 4rem;
+  color: #fffafc;
+  font-weight: 700;
+ 
+}
+.Campaigns-img,.team-img{
+  margin: 10px;
+  border: #fffafc 5px solid;
+  cursor: pointer;
+
+    
+}
+
+  @media screen and (max-width:700px) {
+  .navbar {
+    height: 40px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .gallery {
+    flex-direction:column;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .img {
+  
+    height:300px;width:400px;
+    rotate: none;
+  }
+ .img1,.img2{
+    border:5px solid white;
+    animation:pulse 2s infinite ease-in-out;
+    display:inline-block;
+    cursor:pointer;
+    height:300px;
+    width:400px;
+    rotate: none;
+    margin-top: 20px;
+  }
+  .Creative-Campaigns, .g-img {
+    flex-direction: column;
+    height: auto;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .g-img {
+    width: 90%;
+    height: auto;
+  }
+
+  .Campaigns-img {
+    width: 90%;
+    height: auto;
+  }
+
+  .team-slogan,
+  .Campaigns-slogan {
+    font-size: 2rem;
+    margin-top:-10px;
+  }
+
+  .team-slogan span,
+  .Campaigns-slogan span {
+    font-size: 1.8rem;
+  }
+
+  body {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .Campaigns-slogan {
+    margin-top: 10px;
+  }
+}  
