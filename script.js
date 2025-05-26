@@ -1,23 +1,25 @@
- document.addEventListener("DOMContentLoaded", () => {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const sections = document.querySelectorAll(".category-section");
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.dataset.category;
 
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const category = button.getAttribute("data-category");
-
-      sections.forEach(section => {
-        if (category === "all" || section.getAttribute("data-category") === category) {
-          section.style.display = "block";
-        } else {
-          section.style.display = "none";
-        }
-      });
-
-      // Optional: Highlight active button
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
+    // Hide all sections
+    document.querySelectorAll('.gallery, .Creative-Campaigns, .team-work, #bts-section').forEach(sec => {
+      sec.classList.add('hidden');
     });
+
+    // Show relevant section
+    if (category === 'team') {
+      document.querySelector('.gallery').classList.remove('hidden');
+    } else if (category === 'campaigns') {
+      document.querySelector('.Creative-Campaigns').classList.remove('hidden');
+    } else if (category === 'fun') {
+      document.querySelector('.team-work').classList.remove('hidden');
+    } else if (category === 'bts') {
+      document.querySelector('#bts-section').classList.remove('hidden');
+    } else {
+      document.querySelectorAll('.gallery, .Creative-Campaigns, .team-work, #bts-section').forEach(sec => {
+        sec.classList.remove('hidden');
+      });
+    }
   });
 });
-

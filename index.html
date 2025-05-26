@@ -21,36 +21,74 @@
   <div class="gallery">
     
       <p class="team-slogan" style="margin-top:90px ;">One Team One <br> Dream <br><span>Infinite Vibes.</span></p>
-        <img class="img" src="1.jpeg" >
-        <img class="img1" src="3.jpg" >
-        <img class="img2" src="14.webp" >
+        <img class="img" src="./img/1.jpeg" >
+        <img class="img1" src="./img/3.jpg" >
+        <img class="img2" src="./img/14.webp" >
     </div>
      <p class="Campaigns-slogan" style="margin-top:90px ;">Creative Campaigns</p>
     <div class="Creative-Campaigns ">
     
-        <img class="Campaigns-img" src="9.jpg" style="height:300px;width:300px;cursor: pointer;margin-left:70px;margin-top: 200px;">
-        <img class="Campaigns-img" src="4.jpg" style="height:300px;width:300px;cursor: pointer;">
-        <img class="Campaigns-img" src="5.jpg" style="height:300px;width:300px;margin-top:200px;cursor: pointer;">
-        <img class="Campaigns-img" src="10.jpg" style="height:300px;width:300px;margin-top:20px;;margin-left: -10px;cursor: pointer;">
+        <img class="Campaigns-img" src="./img/9.jpg" style="height:300px;width:300px;cursor: pointer;margin-left:70px;margin-top: 200px;">
+        <img class="Campaigns-img" src="./img/4.jpg" style="height:300px;width:300px;cursor: pointer;">
+        <img class="Campaigns-img" src="./img/5.jpg" style="height:300px;width:300px;margin-top:200px;cursor: pointer;">
+        <img class="Campaigns-img" src="./img/10.jpg" style="height:300px;width:300px;margin-top:20px;;margin-left: -10px;cursor: pointer;">
        <div class="g-img"  style="margin-top:25% ;margin-left: -70%;width: 100%;">
-         <img class="Campaigns-img" src="9.jpg" style="height:300px;width:300px;cursor: pointer;margin-left:-20px;margin-top: 200px;">
-        <img class="Campaigns-img" src="4.jpg" style="height:300px;width:300px;cursor: pointer;">
-        <img class="Campaigns-img" src="5.jpg" style="height:300px;width:300px;margin-top:150px;;margin-left: 10px;cursor: pointer;">
-        <img class="Campaigns-img" src="10.jpg" style="height:300px;width:300px;cursor: pointer;margin-left:70px;">
+         <img class="Campaigns-img" src="./img/9.jpg" style="height:300px;width:300px;cursor: pointer;margin-left:-20px;margin-top: 200px;">
+        <img class="Campaigns-img" src="./img/4.jpg" style="height:300px;width:300px;cursor: pointer;">
+        <img class="Campaigns-img" src="./img/5.jpg" style="height:300px;width:300px;margin-top:150px;;margin-left: 10px;cursor: pointer;">
+        <img class="Campaigns-img" src="./img/10.jpg" style="height:300px;width:300px;cursor: pointer;margin-left:70px;">
     </div>
   </div>
     <div class="team-work">
     
       <p class="team-slogan" style="margin-top:100px ;">Work Hard,  </p>
-      <img class="team-img" src="11.webp" style="height:300px;width:400px;margin-top:200px;">
-        <img class="team-img" src="8.jpg" style="height:300px;width:400px;margin-top:20px;">
+      <img class="team-img" src="./img/11.webp" style="height:300px;width:400px;margin-top:200px;">
+        <img class="team-img" src="./img/8.jpg" style="height:300px;width:400px;margin-top:20px;">
         <p class="team-slogan" style="margin-top:100px ;">Play Hard <br></p>
-        <img class="team-img" src="12.webp" style="height:300px;width:400px;margin-top:200px;margin-right: 10px;">
-        <img class="team-img" src="13.webp" style="height:300px;width:400px;margin-top:20px;margin-left: 10px;">
+        <img class="team-img" src="./img/12.webp" style="height:300px;width:400px;margin-top:200px;margin-right: 10px;">
+        <img class="team-img" src="./img/13.webp" style="height:300px;width:400px;margin-top:20px;margin-left: 10px;">
     </div>
+    <!-- Behind the Scenes Section -->
+<div id="bts-section" class="hidden transition-all duration-500 ease-in-out">
+  <p class="Campaigns-slogan mt-20">Behind the Scenes</p>
+  <div class="flex flex-wrap justify-center items-center px-4 py-8 gap-6">
+    <img src="./img/1.jpeg" class="rounded-lg shadow-lg w-72 h-72 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
+    <img src="./img/15.webp" class="rounded-lg shadow-lg w-72 h-72 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
+    <img src="./img/16.webp" class="rounded-lg shadow-lg w-72 h-72 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
+    <img src="./img/17.webp" class="rounded-lg shadow-lg w-72 h-72 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer">
+  </div>
+  <p class="text-center text-xl text-gray-700 font-semibold mt-4 px-4">Because magic happens where no one's watching...</p>
+</div>
 
     
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.dataset.category;
+
+    // Hide all sections
+    document.querySelectorAll('.gallery, .Creative-Campaigns, .team-work, #bts-section').forEach(sec => {
+      sec.classList.add('hidden');
+    });
+
+    // Show relevant section
+    if (category === 'team') {
+      document.querySelector('.gallery').classList.remove('hidden');
+    } else if (category === 'campaigns') {
+      document.querySelector('.Creative-Campaigns').classList.remove('hidden');
+    } else if (category === 'fun') {
+      document.querySelector('.team-work').classList.remove('hidden');
+    } else if (category === 'bts') {
+      document.querySelector('#bts-section').classList.remove('hidden');
+    } else {
+      document.querySelectorAll('.gallery, .Creative-Campaigns, .team-work, #bts-section').forEach(sec => {
+        sec.classList.remove('hidden');
+      });
+    }
+  });
+});
+
+  </script>
 </body>
 </html> 
